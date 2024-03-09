@@ -60,7 +60,7 @@ async function createConection(options, handler = Handler) {
 
 createConection({ port: 2112, host: "localhost" }, ({ send, onmsg }) => {
 
-    send(Buffer.from("Hallo Welt"))
+    send(Buffer.from("Hello World from client"))
 
     onmsg(data => {
         log(data.toString("utf-8"))

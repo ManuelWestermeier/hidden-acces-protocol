@@ -60,10 +60,12 @@ function createServer(port, handler = Handler) {
 
 createServer(2112, ({ send, onmsg }) => {
 
-    send(Buffer.from("Hallo Welt"))
+    send(Buffer.from("Hello World from server"))
 
     onmsg(data => {
         log(data.toString("utf-8"))
     })
 
 })
+
+process.on("uncaughtException", err => log(err))
